@@ -1,12 +1,21 @@
-import Counter from './hooks/Counter';
-import Users from './hooks/Users';
+import React, { Component } from 'react';
+import MoviePage from './context/MoviePage'
+import UserContext from './context/userContext';
 
-function App() {
-  return (
-    <div>
-      <Users />
-    </div>
-  );
+class App extends Component {
+  state = {
+    currentUser: { name: "Uniqcle" }
+  }
+
+  render() {
+    return (
+      <UserContext.Provider value={this.state.currentUser}>
+        <div>
+          <MoviePage />
+        </div>
+      </UserContext.Provider>
+    );
+  }
 }
 
 export default App;
