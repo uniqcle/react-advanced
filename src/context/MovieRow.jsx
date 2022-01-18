@@ -6,8 +6,6 @@ function MovieRow(props) {
     const userContext = useContext(UserContext)
     const cartContext = useContext(CartContext)
 
-    console.log(cartContext)
-
     return (
         <div>
             Movie Row {userContext ? userContext.currentUser.name : ""}
