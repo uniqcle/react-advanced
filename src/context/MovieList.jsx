@@ -15,11 +15,11 @@ class MovieList extends Component {
         return (
             //use in render
             <UserContext.Consumer>
-                {userContext =>
+                {userContext => (
                     <div>
-                        Movie List {userContext.name}
+                        Movie List {userContext.currentUser ? userContext.currentUser.name : ""}
                         <MovieRow />
-                    </div>}
+                    </div>)}
             </UserContext.Consumer>
         );
     }
